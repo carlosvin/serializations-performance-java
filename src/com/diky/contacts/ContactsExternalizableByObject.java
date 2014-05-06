@@ -1,5 +1,6 @@
 package com.diky.contacts;
 
+import java.io.Externalizable;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
@@ -8,13 +9,13 @@ import java.util.Set;
 /**
  * Created by carlos on 22/09/13.
  */
-public class ContactsToSerializeByObject extends Contacts {
+public class ContactsExternalizableByObject extends Contacts implements Externalizable {
 
-	public ContactsToSerializeByObject(Set<String> emails, Set<String> phones) {
+	public ContactsExternalizableByObject(Set<String> emails, Set<String> phones) {
 		super(emails,phones);
 	}
 
-	public ContactsToSerializeByObject() {
+	public ContactsExternalizableByObject() {
 		super();
 	}
 

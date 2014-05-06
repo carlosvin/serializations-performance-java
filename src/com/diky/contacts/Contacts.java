@@ -1,12 +1,11 @@
 package com.diky.contacts;
 
-import java.io.Externalizable;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 
-public abstract class Contacts implements Externalizable {
+public abstract class Contacts {
 
 	protected final Set<String> emails;
 	protected final Set<String> phones;
