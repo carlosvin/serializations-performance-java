@@ -16,8 +16,8 @@ public abstract class Contacts {
 	}
 
 	public Contacts() {
-		this.emails = new HashSet<>();
-		this.phones = new HashSet<>();
+		this.emails = new HashSet<String>();
+		this.phones = new HashSet<String>();
 	}
 
 	public void setEmails(Set<String> emails) {
