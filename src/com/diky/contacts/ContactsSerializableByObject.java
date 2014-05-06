@@ -5,18 +5,18 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Set;
 
-public class ContactsSerializable extends Contacts implements Serializable {
+public class ContactsSerializableByObject extends Contacts implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 2145160399659807105L;
 
-	public ContactsSerializable(Set<String> emails, Set<String> phones) {
+	public ContactsSerializableByObject(Set<String> emails, Set<String> phones) {
 		super(emails, phones);
 	}
 
-	public ContactsSerializable() {
+	public ContactsSerializableByObject() {
 		super();
 	}
 
