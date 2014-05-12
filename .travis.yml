@@ -1,2 +1,7 @@
 language: java
-gradle test
+
+jdk:
+   - oraclejdk7
+
+install:
+   - gradle test
