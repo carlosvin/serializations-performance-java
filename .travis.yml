@@ -4,4 +4,4 @@ jdk:
    - oraclejdk7
 
 install:
-   - gradle test
+   - gradle --profile test
