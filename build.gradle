@@ -28,5 +28,5 @@ repositories {
 }
 
 checkstyle {
-     configFile = new File(rootDir, "checkstyle.xml")
+     configFile = new File(rootDir, "config/checkstyle/checkstyle.xml")
 }
