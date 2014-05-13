@@ -1,21 +1,22 @@
+language: java
+
+jdk:
+  - oraclejdk7
+   
 env:
   global:
     - secure: "LlUvTKYutgxTzaLEfGRws8RBT3xh7qAG+CLEFdy7DR0EC2J/D8rlwP3fnoW267u6v3dCWey0iJ/ZlGH/Bk1lJ6jnp6vAjGBYGdIGzESjtYY0qvRWypimOeCc5y8Uw5d6qY8OdLcSS4+egExVDMLm6g18BPZKrd77kPSSlqY6krE="
 
-language: java
 
-jdk:
-   - oraclejdk7
-   
 install:
-    - git config --global user.email "carlosvin@gmail.com"
-    - git config --global user.name "carlosvin"
+  - git config --global user.email "carlosvin@gmail.com"
+  - git config --global user.name "carlosvin"
 
 script:
-   - gradle --profile test check
-   - git clone --branch=gh-pages https://$GH_TOKEN@github.com/carlosvin/serializations-performance-java.git output
-   - cd output
-   - mv ../build/reports .
-   - git add .
-   - git commit -m "updating reports"
-   - git push origin gh-pages
+  - gradle --profile test check
+  - git clone --branch=gh-pages https://$GH_TOKEN@github.com/carlosvin/serializations-performance-java.git output
+  - cd output
+  - mv ../build/reports .
+  - git add .
+  - git commit -m "updating reports"
+  - git push origin gh-pages
