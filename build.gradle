@@ -28,8 +28,3 @@ repositories {
 }
 
 ext.checkstyleConfigDir = "config/checkstyle"
-
-checkstyle {
-    configFile = new File(checkstyleConfigDir, "checkstyle.xml")
-    configProperties.checkstyleConfigDir = checkstyleConfigDir
-}
