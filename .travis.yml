@@ -3,8 +3,12 @@ language: java
 jdk:
   - oraclejdk7
    
-secure: "LlUvTKYutgxTzaLEfGRws8RBT3xh7qAG+CLEFdy7DR0EC2J/D8rlwP3fnoW267u6v3dCWey0iJ/ZlGH/Bk1lJ6jnp6vAjGBYGdIGzESjtYY0qvRWypimOeCc5y8Uw5d6qY8OdLcSS4+egExVDMLm6g18BPZKrd77kPSSlqY6krE="
+env:
+  global:
+  - secure: "LlUvTKYutgxTzaLEfGRws8RBT3xh7qAG+CLEFdy7DR0EC2J/D8rlwP3fnoW267u6v3dCWey0iJ/ZlGH/Bk1lJ6jnp6vAjGBYGdIGzESjtYY0qvRWypimOeCc5y8Uw5d6qY8OdLcSS4+egExVDMLm6g18BPZKrd77kPSSlqY6krE="
 
+before_install:
+  - sudo apt-get update && sudo apt-get --reinstall install -qq language-pack-en language-pack-es
 
 install:
   - git config --global user.email "carlosvin@gmail.com"
