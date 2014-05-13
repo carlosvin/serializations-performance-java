@@ -12,4 +12,4 @@ script:
    - gradle --profile test check
    - git clone --branch=gh-pages https://$GH_TOKEN@github.com/carlosvin/serializations-performance-java.git output
    - cd output
-   - ls build
+   - ls ../build
