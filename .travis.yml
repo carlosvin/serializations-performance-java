@@ -7,6 +7,10 @@ env:
 
 jdk:
    - oraclejdk7
+   
+install:
+    - git config --global user.email "$GIT_EMAIL"
+    - git config --global user.name "$GIT_NAME"
 
 script:
    - gradle --profile test check
