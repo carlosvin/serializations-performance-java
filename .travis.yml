@@ -12,5 +12,7 @@ script:
    - gradle --profile test check
    - git clone --branch=gh-pages https://$GH_TOKEN@github.com/carlosvin/serializations-performance-java.git output
    - cd output
-   - ls ../build
-   - ls ../build/reports
+   - mv ../build/reports .
+   - git add .
+   - git commit -m "updating reports"
+   - git push origin gh-pages
