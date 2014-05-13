@@ -1,14 +1,20 @@
 package com.diky.contacts;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 
-public abstract class Contacts {
+public class Contacts implements Serializable{
 
-	protected final Set<String> emails;
-	protected final Set<String> phones;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3002402809420605254L;
+	
+	protected Set<String> emails;
+	protected Set<String> phones;
 
 	public Contacts(Set<String> emails, Set<String> phones) {
 		this.emails = emails;

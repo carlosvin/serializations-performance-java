@@ -19,23 +19,19 @@ import org.junit.Test;
 
 public class SerializationTest {
 
-	private static final int MAX_ELEMENTS = 1000000;
-	Set<String> emails, phones;
-	private ContactsExternalizableByObject externalizableContactsByObjects;
-	private ContactsExternalizableByAttribute externalizableContactsByAttr;
-	private ContactsSerializableByObject serializableContactsByObject;
-	private ContactsSerializableByAttr serializableContactsByAttr;
+	private static final int MAX_ELEMENTS = 100000;
+
+	private static final Set<String> emails = new HashSet<>();
+	private static final Set<String> phones = new HashSet<>();
+	
+	private static ContactsExternalizableByObject externalizableContactsByObjects;
+	private static ContactsExternalizableByAttribute externalizableContactsByAttr;
+	private static Contacts serializableContactsByObject;
 
 	@BeforeClass
-	public static void pre(){
-		System.out.println("Testing with " + MAX_ELEMENTS + " elements");
-	}
-	
-	@Before
-	public void setUp() throws Exception {
-		emails = new HashSet<>();
-		phones = new HashSet<>();
-		
+	public static void pre() {
+		System.out.println("Testing with " + MAX_ELEMENTS + " elements\n");
+
 		// fill the emails and phones set
 		for (int i = 1; i < MAX_ELEMENTS; i++) {
 			if (i % 2 == 0) {
@@ -49,11 +45,15 @@ public class SerializationTest {
 			emails.add("email." + i + "@ext.com");
 		}
 
-		externalizableContactsByAttr = new ContactsExternalizableByAttribute(emails, phones);
-		externalizableContactsByObjects = new ContactsExternalizableByObject(emails, phones);
-		serializableContactsByObject = new ContactsSerializableByObject(emails, phones);
-		serializableContactsByAttr = new ContactsSerializableByAttr(emails, phones);
+		externalizableContactsByAttr = new ContactsExternalizableByAttribute(
+				emails, phones);
+		externalizableContactsByObjects = new ContactsExternalizableByObject(
+				emails, phones);
+		serializableContactsByObject = new Contacts(emails, phones);
 	}
+
+	@Before
+	public void setUp() throws Exception { }
 
 	@After
 	public void tearDown() throws Exception {
@@ -63,30 +63,27 @@ public class SerializationTest {
 	@Test
 	public void testRWByObj() throws FileNotFoundException, IOException,
 			ClassNotFoundException {
-		testContacts("testRWByObj.txt", externalizableContactsByObjects, new ContactsExternalizableByObject());
+		testContacts("testRWByObj.txt", externalizableContactsByObjects,
+				new ContactsExternalizableByObject());
 
 	}
 
 	@Test
 	public void testRWByAttr() throws FileNotFoundException, IOException,
 			ClassNotFoundException {
-		testContacts("testRWByAttr.txt", externalizableContactsByAttr, new ContactsExternalizableByAttribute());
+		testContacts("testRWByAttr.txt", externalizableContactsByAttr,
+				new ContactsExternalizableByAttribute());
 
 	}
-	
+
 	@Test
-	public void testRWSerializableByObject() throws FileNotFoundException, IOException,
-			ClassNotFoundException {
-		testContacts("testRWSerializableByObject.txt", serializableContactsByObject, new ContactsSerializableByObject());
+	public void testRWSerializableByObject() throws FileNotFoundException,
+			IOException, ClassNotFoundException {
+		testContacts("testRWSerializableByObject.txt",
+				serializableContactsByObject, null);
 
 	}
-	@Test
-	public void testRWSerializableByAttr() throws FileNotFoundException, IOException,
-			ClassNotFoundException {
-		testContacts("testRWSerializableByAttr.txt", serializableContactsByAttr, new ContactsSerializableByAttr());
 
-	}
-	
 	private void testContacts(String filepath, Contacts contactsIn,
 			Contacts contactsOut) throws FileNotFoundException, IOException,
 			ClassNotFoundException {
@@ -102,7 +99,6 @@ public class SerializationTest {
 		out.close();
 		long endSerializationTime = System.currentTimeMillis();
 
-		
 		long startDeserialization = System.currentTimeMillis();
 		ObjectInputStream inputStream = new ObjectInputStream(
 				new FileInputStream(filepath));
