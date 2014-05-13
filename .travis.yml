@@ -3,9 +3,7 @@ language: java
 jdk:
   - oraclejdk7
    
-env:
-  global:
-    - secure: "LlUvTKYutgxTzaLEfGRws8RBT3xh7qAG+CLEFdy7DR0EC2J/D8rlwP3fnoW267u6v3dCWey0iJ/ZlGH/Bk1lJ6jnp6vAjGBYGdIGzESjtYY0qvRWypimOeCc5y8Uw5d6qY8OdLcSS4+egExVDMLm6g18BPZKrd77kPSSlqY6krE="
+secure: "LlUvTKYutgxTzaLEfGRws8RBT3xh7qAG+CLEFdy7DR0EC2J/D8rlwP3fnoW267u6v3dCWey0iJ/ZlGH/Bk1lJ6jnp6vAjGBYGdIGzESjtYY0qvRWypimOeCc5y8Uw5d6qY8OdLcSS4+egExVDMLm6g18BPZKrd77kPSSlqY6krE="
 
 
 install:
