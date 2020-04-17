@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.github.carlosvin.contacts.SerializationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-04-17T22:24:29" hostname="vin" time="1.913">
+  <properties/>
+  <testcase name="testRWSerializableByObject" classname="com.github.carlosvin.contacts.SerializationTest" time="1.007"/>
+  <testcase name="testRWByAttr" classname="com.github.carlosvin.contacts.SerializationTest" time="0.132"/>
+  <testcase name="testRWByObj" classname="com.github.carlosvin.contacts.SerializationTest" time="0.772"/>
+  <system-out><![CDATA[Testing with 100000 elements
+
+Serialization	Contacts:	519ms
+Deserialization	Contacts:	476ms
+--------------
+Serialization	ContactsExternalizableByAttribute:	36ms
+Deserialization	ContactsExternalizableByAttribute:	95ms
+--------------
+Serialization	ContactsExternalizableByObject:	327ms
+Deserialization	ContactsExternalizableByObject:	440ms
+--------------
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
