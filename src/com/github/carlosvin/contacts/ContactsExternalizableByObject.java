@@ -1,4 +1,4 @@
-package com.diky.contacts;
+package com.github.carlosvin.contacts;
 
 import java.io.Externalizable;
 import java.io.IOException;
@@ -19,6 +19,7 @@ public class ContactsExternalizableByObject extends Contacts implements External
 		super();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
 		setEmails((Set<String>) in.readObject());

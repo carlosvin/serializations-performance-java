@@ -1,4 +1,4 @@
-package com.diky.contacts;
+package com.github.carlosvin.contacts;
 
 import static org.junit.Assert.assertEquals;
 

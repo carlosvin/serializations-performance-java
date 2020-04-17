@@ -1,4 +1,4 @@
-package com.diky.wifi;
+package com.github.carlosvin.contacts;
 
 import java.io.Externalizable;
 

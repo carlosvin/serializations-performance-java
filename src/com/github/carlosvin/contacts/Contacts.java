@@ -1,4 +1,4 @@
-package com.diky.contacts;
+package com.github.carlosvin.contacts;
 
 import java.io.Serializable;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package com.diky.contacts;
+package com.github.carlosvin.contacts;
 
 import java.io.Externalizable;
 import java.io.IOException;
